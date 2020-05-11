@@ -60,7 +60,7 @@ Implement the screens based off the wireframes and api above using advanced tech
 - Input field for user
 - Enter button takes user to the Main screen
 
-![Image of Home Screen](https://github.com/Showwcase/Showwcase-Intern-React-Challenge/blob/master/MacBook_-_2.jpg)
+![Image of Introduction Screen](https://github.com/Showwcase/Showwcase-Intern-React-Challenge/blob/master/MacBook_-_2.jpg)
 
 ## Main screen
 
@@ -69,13 +69,15 @@ Implement the screens based off the wireframes and api above using advanced tech
 - Side panel acts as a bookmark menu of the list of education added
 - Each new education added should appear above the previous, i.e. descending order of most recent
 
-![Showwcase%20Developer%20Challenge%203d422949c1054bb08a50f69199ec9f8f/MacBook_-_3.jpg](Showwcase%20Developer%20Challenge%203d422949c1054bb08a50f69199ec9f8f/MacBook_-_3.jpg)
+![Image of Main Screen](https://github.com/Showwcase/Showwcase-Intern-React-Challenge/blob/master/MacBook_-_3.jpg)
+
+
 
 ## Add education modal
 
 - Background Main screen should dim down when modal opens
 - Modal allows the user to add the relevant information and save it.
 
-![Showwcase%20Developer%20Challenge%203d422949c1054bb08a50f69199ec9f8f/MacBook_-_4.jpg](Showwcase%20Developer%20Challenge%203d422949c1054bb08a50f69199ec9f8f/MacBook_-_4.jpg)
+![Image of Modal Screen](https://github.com/Showwcase/Showwcase-Intern-React-Challenge/blob/master/MacBook_-_4.jpg)
 
 © 2020 Showcase Creators Inc. All rights reserved. Certain information contained herein is derived from information which is protected by copyrights held by Showcase Creators Inc. This code challenge, including any parts of it, cannot be duplicated, distributed, copied, modified, used to make a derivative work or used in any way without the prior written consent of Showcase Creators Inc.
