@@ -60,7 +60,7 @@ Implement the screens based off the wireframes and api above using advanced tech
 - Input field for user
 - Enter button takes user to the Main screen
 
-!(https://github.com/Showwcase/Showwcase-Intern-React-Challenge/MacBook_-_2.jpg?raw=true)
+![Image of Home Screen](https://github.com/Showwcase/Showwcase-Intern-React-Challenge/MacBook_-_2.jpg)
 
 ## Main screen
 
