@@ -12,8 +12,7 @@ You should not just implement the most basic solution. This is a chance to show 
 
 ## Requirements
 
-- We use the create-react-app typescript template, you can find instructions here:
-[https://create-react-app.dev/docs/adding-typescript/](https://create-react-app.dev/docs/adding-typescript/)
+- Create a Next.Js App (https://nextjs.org/learn/basics/create-nextjs-app)
 - Users must be able to enter as many educational experiences as they please;
 - When the user is typing the name of the school they went, it should be auto completed using an API call.
 - Users must be able to enter the following information: Name of School, Degree, Field of study, Start year, End Year (Or expected), Grade, a Description field, and anything else you wish to add.
@@ -26,8 +25,8 @@ You should not just implement the most basic solution. This is a chance to show 
     - Styled Components: [https://styled-components.com/](https://styled-components.com/)
     - Styled System is a nice helper to Styled Components: [https://styled-system.com/](https://styled-system.com/)
     - Hooks: [https://reactjs.org/docs/hooks-intro.html](https://reactjs.org/docs/hooks-intro.html)
-    - Redux: [https://redux.js.org/](https://redux.js.org/)
     - React Modal: [https://github.com/reactjs/react-modal](https://github.com/reactjs/react-modal)
+    - React Query/SWR: [https://react-query.tanstack.com/]
 
 ## What we will be looking for
 
@@ -40,7 +39,7 @@ You should not just implement the most basic solution. This is a chance to show 
 
 Some specific things that we may be looking for:
 
-- Typescript if you know it
+- Typescript
 - Atomic Design in React
 - Correct implementation of a state manager
 - Correct implementation of a navigation solution
@@ -49,6 +48,7 @@ Some specific things that we may be looking for:
 - Best practices with API calls and data
 - Separation of concerns between business and UI logic
 - Frequent commits
+- If you deploy to Netlify or Vercel that is a +!
 
 # Goals
 
