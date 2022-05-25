@@ -5,6 +5,9 @@ import "react-datepicker/dist/react-datepicker.css";
 import Select from "react-select";
 import useSWR from "swr";
 import useDebounce from "./useDebounce";
+import InputCustom from "./Input";
+import SelectCustom from "./Select";
+import CustomButton from "./Button";
 
 const customStyles = {
   content: {
@@ -20,15 +23,8 @@ const customStyles = {
   },
 };
 
-const selectCustomStyles = {
-  container: (provided) => ({
-    ...provided,
-    width: 180,
-  }),
-};
-
 const EducationModal = ({ isModalOpen, changeModalState, onModalSubmit }) => {
-  const [typedInputValue, setTypedInputValue] = useState("");
+  const [typedInputValue, setTypedInputValue] = useState<string>();
   const [selectedInstitue, setSelectedInstitute] = useState();
   const [selectOptions, setSelectOptions] = useState([]);
   const [startDate, setStartDate] = useState(new Date());
@@ -92,8 +88,14 @@ const EducationModal = ({ isModalOpen, changeModalState, onModalSubmit }) => {
   };
 
   const onsubmit = () => {
-    changeModalState();
-    onModalSubmit();
+    let currentEducationModal = {
+      degree: degree,
+      university: selectedInstitue.label,
+      achivements: achivements,
+      startDate: startDate,
+      endDate: endDate,
+    };
+    onModalSubmit(currentEducationModal);
   };
   return (
     <Modal
@@ -104,20 +106,18 @@ const EducationModal = ({ isModalOpen, changeModalState, onModalSubmit }) => {
       <div className="w-full space-y-4">
         <div className="flex justify-between">
           <label>Degree</label>
-          <input
+          <InputCustom
             value={degree}
             onChange={(e) => setDegree(e.target.value)}
-            className="border"
-          ></input>
+          ></InputCustom>
         </div>
         <div className="flex justify-between">
           <label>Institution</label>
-          <Select
+          <SelectCustom
             value={selectedInstitue}
             onInputChange={(value: any) => onInstituteChange(value)}
             options={selectOptions}
             onChange={onInstituteSelect}
-            styles={selectCustomStyles}
           />
         </div>
         <div className="flex justify-between">
@@ -126,7 +126,7 @@ const EducationModal = ({ isModalOpen, changeModalState, onModalSubmit }) => {
             <DatePicker
               selected={startDate}
               onChange={(date: Date) => setStartDate(date)}
-              customInput={<input className="border"></input>}
+              customInput={<InputCustom />}
             />
           </div>
         </div>
@@ -136,18 +136,18 @@ const EducationModal = ({ isModalOpen, changeModalState, onModalSubmit }) => {
             <DatePicker
               selected={endDate}
               onChange={(date: Date) => setEndDate(date)}
-              customInput={<input className="border"></input>}
+              customInput={<InputCustom />}
             />
           </div>
         </div>
-        <div className="justify-end flex flex-col items-end">
+        <div className="flex flex-col items-end justify-end">
           {achivements.map((item: string, index: number) => {
             return (
               <div key={index} className="space-x-1">
                 <span>{item}</span>
                 <span
                   onClick={() => removeAchivements(index)}
-                  className="text-xs text-red-400 bg-red-200 rounded-full p-1 cursor-pointer"
+                  className="p-1 text-xs text-red-400 bg-red-200 rounded-full cursor-pointer"
                 >
                   X
                 </span>
@@ -158,17 +158,14 @@ const EducationModal = ({ isModalOpen, changeModalState, onModalSubmit }) => {
         <div className="flex justify-between">
           <label>Achivements</label>
 
-          <input
+          <InputCustom
             value={achivementInputValue}
             onChange={(e) => setAchivementValue(e.target.value)}
-            className="border"
             onKeyDown={onEnterClick}
-          ></input>
+          ></InputCustom>
         </div>
         <div>
-          <button className="bg-blue-500" onClick={() => onsubmit()}>
-            Submit
-          </button>
+          <CustomButton label="Submit" onClick={() => onsubmit()} />
         </div>
       </div>
     </Modal>
