@@ -30,7 +30,6 @@
   background: var(--primary-glow);
   width: 240px;
   height: 180px;
-  z-index: -1;
 }
 
 .main::before,
@@ -41,6 +40,7 @@
   position: absolute;
   filter: blur(45px);
   transform: translateZ(0);
+  z-index: -1;
 }
 
 /* Mobile */
