@@ -1,14 +1,12 @@
-import type { NextPage } from "next";
 import Layout from 'src/components/Layout'
+import HomeTemplate from 'src/components/Templates/Home'
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
     <>
       <Layout pageTitle="Home">
-        Showcase
+        <HomeTemplate />
       </Layout>
     </>
   )
 }
-
-export default Home;
