@@ -3,8 +3,11 @@ import Input from 'src/components/UI/Input';
 import Button from 'src/components/UI/Button';
 import React, { useState } from "react";
 import { useLocalStorage } from 'src/hooks/useLocalStorage';
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const Router = useRouter()
+
   const [name, setName] = useState<string>('');
   const [error, setError] = useState<boolean>(false);
   const [localStorage, setlocalStorage] = useLocalStorage('name', name);
@@ -18,6 +21,7 @@ export default function Home() {
       setlocalStorage(name)
       setName("")
       setError(false)
+      Router.push('/education')
     } else {
       setError(true)
     }
