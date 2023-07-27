@@ -1,16 +1,16 @@
-import Style from 'src/components/Templates/Home/Home.styled';
+import HomeStyle from 'src/components/Templates/Home/Home.styled';
 import Input from 'src/components/UI/Input';
 import Button from 'src/components/UI/Button';
 import React, { useState } from "react";
 import { useLocalStorage } from 'src/hooks/useLocalStorage';
 import { useRouter } from 'next/router';
 
-export default function Home() {
+export default function HomeTemplate() {
   const Router = useRouter()
 
   const [name, setName] = useState<string>('');
   const [error, setError] = useState<boolean>(false);
-  const [localStorage, setlocalStorage] = useLocalStorage('name', name);
+  const [localStorage, setlocalStorage] = useLocalStorage('name', '');
 
   const handleOnChange = (e:any) => {
     setName(e.target.value)
@@ -28,7 +28,7 @@ export default function Home() {
   }
 
   return (
-    <Style>
+    <HomeStyle>
       <p>Hi There! Welcome to your education showcase.</p>
 
       <div className='input-group'>
@@ -48,6 +48,6 @@ export default function Home() {
           Enter
         </Button>
       </div>
-    </Style>
+    </HomeStyle>
   )
 }

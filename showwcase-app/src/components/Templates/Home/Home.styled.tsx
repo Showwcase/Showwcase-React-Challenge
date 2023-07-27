@@ -1,10 +1,6 @@
 import styled from "styled-components"
 
-interface Props {
-  inputColor?: string;
-}
-
-export default styled.div<Props>`
+export default styled.div`
   display: flex;
   flex-direction: column;
   gap: 80px;
@@ -26,7 +22,6 @@ export default styled.div<Props>`
     width: 100%;
     margin: 0.5em;
     color: #000000;
-    /* color: ${(props) => props.inputColor || "#000000"}; */
     background: #ffffff;
     border: none;
     border-radius: 3px;
@@ -36,6 +31,5 @@ export default styled.div<Props>`
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* gap: 12px; */
   }
 `
