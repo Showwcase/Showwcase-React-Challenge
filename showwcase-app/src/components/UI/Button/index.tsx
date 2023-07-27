@@ -1,10 +1,10 @@
-import React from 'react'
-import ButtonStyle from 'src/components/UI/Button/Button.styled'
+import React from 'react';
+import ButtonStyle from 'src/components/UI/Button/Button.styled';
 
 interface Props {
   children: React.ReactNode;
-  disabled?: boolean,
-  type: 'button' | 'submit' | 'reset',
+  disabled?: boolean;
+  type: 'button' | 'submit' | 'reset';
   onClick: () => void;
 }
 

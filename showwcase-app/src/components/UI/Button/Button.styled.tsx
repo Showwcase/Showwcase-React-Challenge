@@ -1,10 +1,6 @@
 import styled from "styled-components"
 
-interface Props {
-  bgColor?: string;
-}
-
-export default styled.button<Props>`
+export default styled.button`
   display: flex;
   color: #000000;
   background-color: #9dbaed;
