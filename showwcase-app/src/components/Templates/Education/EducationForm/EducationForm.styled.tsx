@@ -37,4 +37,11 @@ export default styled.div`
       gap: 10px;
     }
   }
+
+  /** mobile */
+  @media only screen and (max-width: 768px) {
+    .dropdown-wrapper {
+      display: block;
+    }
+  }
 `

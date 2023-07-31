@@ -3,15 +3,18 @@ import Button from 'src/components/UI/Button';
 import Input from 'src/components/UI/Input';
 import TextArea from 'src/components/UI/TextArea';
 import Dropdown from 'src/components/UI/Dropdown';
-import useFetch from 'src/hooks/useFetch'
+import useFetch from 'src/hooks/useFetch';
+import { useRouter } from "next/router";
+import { Months } from "src/utils/data";
+import { getYears } from "src/utils/functions";
 import { useLocalStorage } from 'src/hooks/useLocalStorage';
-import { Months } from "src/utils/data"
-import { getYears } from "src/utils/functions"
-import { useGlobalContext } from 'src/Context/store';
+import { useGlobalContext } from 'src/context/store';
 
 export default function EducationForm() {
-  const { setIsModalOpen, data, setData } = useGlobalContext();
-  const [localStorage, setlocalStorage] = useLocalStorage('Data', {});
+  const router = useRouter();
+
+  const {setIsModalOpen, data, setData} = useGlobalContext();
+  const [educationData, setEducationData] = useLocalStorage("EducationData", []);
 
   const education = useFetch(data.school);
 
@@ -20,9 +23,17 @@ export default function EducationForm() {
     setData({...data, [name]: value});
   }
 
+  const validateSubmit = () => {
+    return data.school == '' || data.degree == '';
+  }
+
   const handleSubmit = () => {
-    setlocalStorage(data)
-    setIsModalOpen(false)
+    const updatedData = [data, ...educationData];
+    updatedData.sort((a: any, b: any) => b.id - a.id); //descending order of most recent
+
+    setEducationData(updatedData);
+    setIsModalOpen(false);
+    router.reload();
   }
 
   return (
@@ -60,7 +71,7 @@ export default function EducationForm() {
                 onChange={e => setData({...data, startMonthDate: e})} 
               />
               <Dropdown
-                options={getYears('before')} 
+                options={getYears('start')} 
                 value={data.startYearDate} 
                 onChange={e => setData({...data, startYearDate: e})} 
               />
@@ -76,7 +87,7 @@ export default function EducationForm() {
                 onChange={e => setData({...data, endMonthDate: e})} 
               />
               <Dropdown
-                options={getYears('after')} 
+                options={getYears('expected')} 
                 value={data.endYearDate} 
                 onChange={e => setData({...data, endYearDate: e})} 
               />
@@ -104,6 +115,7 @@ export default function EducationForm() {
         <Button
           type="button"
           onClick={handleSubmit}
+          disabled={validateSubmit()}
         >
           Save
         </Button>
