@@ -17,7 +17,6 @@ export type SchoolType = SelectOption & {
 export type Education = {
   school: string;
   degree: string;
-  fieldStudy: string;
   grade: string;
   description: string;
   startMonthDate: SelectOption | undefined;
