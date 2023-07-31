@@ -6,24 +6,24 @@ import { useLocalStorage } from 'src/hooks/useLocalStorage';
 import { useRouter } from 'next/router';
 
 export default function HomeTemplate() {
-  const Router = useRouter()
+  const Router = useRouter();
 
   const [name, setName] = useState<string>('');
   const [error, setError] = useState<boolean>(false);
-  const [localStorage, setlocalStorage] = useLocalStorage('name', '');
+  const [nameLocalStorage, setNamelocalStorage] = useLocalStorage('name', '');
 
   const handleOnChange = (e:any) => {
-    setName(e.target.value)
+    setName(e.target.value);
   }
 
   const handleSubmit = () => {
     if (name) {
-      setlocalStorage(name)
-      setName("")
-      setError(false)
-      Router.push('/education')
+      setNamelocalStorage(name);
+      setName("");
+      setError(false);
+      Router.push('/education');
     } else {
-      setError(true)
+      setError(true);
     }
   }
 

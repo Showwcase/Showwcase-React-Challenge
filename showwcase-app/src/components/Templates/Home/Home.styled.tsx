@@ -3,14 +3,14 @@ import styled from "styled-components"
 export default styled.div`
   display: flex;
   flex-direction: column;
-  gap: 80px;
-  padding: 20px;
+  gap: 60px;
   align-items: center;
   justify-content: flex-end;
   background-color: transparent;
   font-family: "Roboto";
   font-size: 14px;
   color: #ffffff;
+  text-align: center;
 
   span {
     font-size: 16px;
@@ -31,5 +31,10 @@ export default styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  /* Mobile */
+  @media only screen and (max-width: 768px) {
+    gap: 40px;
   }
 `
