@@ -4,19 +4,19 @@ import EducationStyle from 'src/components/Templates/Education/Education.styled'
 import EducationProfile from 'src/components/Templates/Education/EducationProfile';
 import EducationForm from 'src/components/Templates/Education/EducationForm';
 import { useEffect, useState } from 'react';
-import { useGlobalContext } from 'src/Context/store';
+import { useGlobalContext } from 'src/context/store';
 import { useLocalStorage } from 'src/hooks/useLocalStorage';
 
 export default function EducationTemplate() {
   const [name, setName] = useState<string>('');
-  const [localStorage, setlocalStorage] = useLocalStorage('name', '');
+  const [nameLocalStorage, setNamelocalStorage] = useLocalStorage('name', '');
   const { isModalOpen, setIsModalOpen } = useGlobalContext();
 
   useEffect(() => {
-    if (localStorage) {
-      setName(localStorage)
+    if (nameLocalStorage) {
+      setName(nameLocalStorage);
     }
-  }, [localStorage])
+  }, [nameLocalStorage])
 
   return (
     <EducationStyle>
