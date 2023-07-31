@@ -1,7 +1,7 @@
 import Head from "next/head";
-import styles from 'src/styles/Home.module.css'
-import Navbar from 'src/components/Layout/Navbar'
-import Footer from 'src/components/Layout/Footer'
+import LayoutStyle from 'src/components/Layout/Layout.styled';
+import Navbar from 'src/components/Layout/Navbar';
+import Footer from 'src/components/Layout/Footer';
 
 interface Props {
   children: React.ReactNode;
@@ -17,16 +17,15 @@ export default function Layout({pageTitle, children}: Props) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <div className={`${styles.container}`}>
+      <LayoutStyle>
         <Navbar />
 
-        <main className={`${styles.main}`}>
+        <main className="main">
           {children}
         </main>
         
         <Footer />
-      </div>
-
+      </LayoutStyle>
     </>
   )
 }

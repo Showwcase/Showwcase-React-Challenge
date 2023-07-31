@@ -10,4 +10,8 @@ export default styled.footer`
   font-size: 14px;
   margin-top: auto;
   color: #a7a7a7;
+  
+  @media only screen and (max-width: 768px) {
+    padding: 20px 20px;
+  }
 `
