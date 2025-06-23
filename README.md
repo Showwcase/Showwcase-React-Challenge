@@ -1,83 +1,96 @@
-# Showwcase Developer Challenge
+# Frontend Challenge
 
-## General idea
+## Overview
 
-We hope to evaluate your programming skills in a project that has a very similar stack to ours, a preview of what you will be working with at Showwcase. 
+Welcome! This challenge is designed to assess your frontend engineering skills using a modern React stack. You'll build a Pokemon web app that allows users to browse, search, and manage their favorite Pokemon using the Pokemon API.
 
-## What you will be building
-
-Your challenge is to create a simple web app in the technology you are applying to work in. Your task is to simulate how a user will be able to input their educational background into their Showwcase profile page. 
-
-You should not just implement the most basic solution. This is a chance to show off your abilities, creativity, and impress.
+**Time Limit: 6 hours**
 
 ## Requirements
 
-- Create a Next.Js App (https://nextjs.org/learn/basics/create-nextjs-app)
-- Users must be able to enter as many educational experiences as they please;
-- When the user is typing the name of the school they went, it should be auto completed using an API call.
-- Users must be able to enter the following information: Name of School, Degree, Field of study, Start year, End Year (Or expected), Grade, a Description field, and anything else you wish to add.
+### **Tech Stack**
 
-## Guidance and instructions
+- **Next.js** (latest, App Router, TypeScript)
+- **Zustand** for state management
+- **React Query** for data fetching/caching
 
-- This is a free API that has data on Universities worldwide, feel free to use it or if you find something better make sure to use it. 
-[https://github.com/Hipo/university-domains-list-api](https://github.com/Hipo/university-domains-list-api)
-- Here are a few technologies we use at Showwcase and we would prefer if you used them as well should you see the need for them:
-    - Styled Components: [https://styled-components.com/](https://styled-components.com/)
-    - Styled System is a nice helper to Styled Components: [https://styled-system.com/](https://styled-system.com/)
-    - Hooks: [https://reactjs.org/docs/hooks-intro.html](https://reactjs.org/docs/hooks-intro.html)
-    - React Modal: [https://github.com/reactjs/react-modal](https://github.com/reactjs/react-modal)
-    - React Query/SWR: [https://react-query.tanstack.com/]
+### **Core Features**
 
-## What we will be looking for
+1. **Pokemon List Page**
 
-- Functionality
-- Code Format
-- Project Structure
-- Scalability
-- Maintainability
-- Use of industry best practices
+   - Display a list of Pokemon with pagination
+   - Show Pokemon name, image, and basic info
+   - Search functionality to find Pokemon by name
+   - Responsive grid layout
 
-Some specific things that we may be looking for:
+2. **Pokemon Detail Modal**
 
-- Typescript
-- Atomic Design in React
-- Correct implementation of a state manager
-- Correct implementation of a navigation solution
-- Componentization
-- Communication in the repo and/or code
-- Best practices with API calls and data
-- Separation of concerns between business and UI logic
-- Frequent commits
-- If you deploy to Netlify or Vercel that is a +!
+   - Click on a Pokemon to open detailed view
+   - Show comprehensive Pokemon information:
+     - Stats (HP, Attack, Defense, etc.)
+     - Abilities
+     - Types
+     - Height/Weight
+     - Evolution chain (if time permits)
 
-# Goals
+3. **Favorites Management**
 
-Implement the screens based off the wireframes and api above using advanced techniques and industry best practices for your platform. Note that the wireframes may not be complete, so use your best judgment for UI/UX implementation. 
+   - Add/remove Pokemon to favorites
+   - Favorites page showing saved Pokemon
+   - Persist favorites in local storage
 
-## Introduction and Home screen:
+4. **UX/UI**
+   - Responsive and accessible design
+   - Loading states and error handling
+   - Clean, modern interface
+   - Smooth animations/transitions
 
-- Static text
-- Input field for user
-- Enter button takes user to the Main screen
+## Bonus Points (if time permits)
 
-![Image of Introduction Screen](https://github.com/Showwcase/Showwcase-Intern-React-Challenge/blob/master/MacBook_-_2.jpg)
+- **Advanced Search**: Filter by type, abilities, or stats
+- **Evolution Chain**: Display Pokemon evolution paths
+- **Battle Stats**: Compare Pokemon stats visually
+- **Dark/Light Mode**: Theme toggle
+- **Animations**: Smooth transitions and micro-interactions
+- **Testing**: Add a few unit tests
+- **Deployment**: Deploy to Vercel or Netlify
 
-## Main screen
+## Evaluation Criteria
 
-- Dynamic text
-- Button to open up new modal to add a new education component
-- Side panel acts as a bookmark menu of the list of education added
-- Each new education added should appear above the previous, i.e. descending order of most recent
+- **Functionality**: Does the app meet the core requirements?
+- **Code Quality**: Is the code clean, modular, and well-typed?
+- **Project Structure**: Is the codebase organized and scalable?
+- **Best Practices**: Are modern React/Next.js patterns used?
+- **UI/UX**: Is the app visually appealing and user-friendly?
+- **Performance**: Efficient API calls and state management
+- **Communication**: Clear comments and helpful README
 
-![Image of Main Screen](https://github.com/Showwcase/Showwcase-Intern-React-Challenge/blob/master/MacBook_-_3.jpg)
+## Getting Started
 
+1. **Fork this repo** or create a new one
+2. **Set up Next.js** with TypeScript
+3. **Install dependencies**: zustand, @tanstack/react-query, react-modal
+4. **Use the Pokemon API**: https://pokeapi.co/
+5. **Follow the requirements above**
+6. **Push your code** to GitHub and share the link
 
+## API Resources
 
-## Add education modal
+- **Pokemon API**: https://pokeapi.co/
+- **API Documentation**: https://pokeapi.co/docs/v2
+- **Key Endpoints**:
+  - List Pokemon: `https://pokeapi.co/api/v2/pokemon?limit=20&offset=0`
+  - Pokemon Details: `https://pokeapi.co/api/v2/pokemon/{id}`
+  - Pokemon Species: `https://pokeapi.co/api/v2/pokemon-species/{id}`
 
-- Background Main screen should dim down when modal opens
-- Modal allows the user to add the relevant information and save it.
+## Submission
 
-![Image of Modal Screen](https://github.com/Showwcase/Showwcase-Intern-React-Challenge/blob/master/MacBook_-_4.jpg)
+- Share your GitHub repo link
+- (Optional) Share your deployed app link
+- Include a brief summary of what you accomplished in 6 hours
+
+---
+
+**Good luck! We're excited to see your Pokemon app! 🎮**
 
 © 2020 Showcase Creators Inc. All rights reserved. Certain information contained herein is derived from information which is protected by copyrights held by Showcase Creators Inc. This code challenge, including any parts of it, cannot be duplicated, distributed, copied, modified, used to make a derivative work or used in any way without the prior written consent of Showcase Creators Inc.
